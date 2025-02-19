@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input> <button id="test">测试</button>
+    
+    <ul>
+        <li>金瓶梅</li>
+        <li>貂蝉往事</li>
+        <li>东京热不热</li>
+    </ul>
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+        $("#test").click(function (){
+           var bookname = $("input").val();
+           var newLi = $(" <li>"+bookname+"</li>"); //通过工厂函数,创建新的li
+
+           /*添加子节点*/
+           // $("ul").append(newLi); //newli作为子节点添加到ul末尾
+           // $(newLi).appendTo("ul"); //newli作为子节点添加到ul末尾,与上面作用一样,写法不同
+           // $("ul").prepend(newLi); //newli作为子节点添加到ul最前面
+           // $(newLi).prependTo("ul"); //newli作为子节点添加到ul末尾,与上面作用一样,写法不同
+
+           /*添加同辈节点*/
+           // $("li:last").after(newLi); //newLi作为同辈节点添加到li最后一个节点之后
+           // $(newLi).insertAfter("li:last"); //与上面作用相同,写法不同
+            // $("li:first").before(newLi); newli作为同辈节点添加到ul最前面
+            // $(newLi).insertBefore("li:first"); //与上面作用相同,写法不同
+
+           /*替换节点*/
+           // $("li:eq(1)").replaceWith(newLi); //将第2个li替换为newLi
+
+           /*复制节点*/
+           // $("li:first").clone().insertAfter("li:last"); // 复制第一个li,并插入到最后一个li的后面
+
+           /*删除节点*/
+           // $("li:eq(1)").empty(); //清除li上的文本
+            $("li:eq(1)").remove(); //删除li
+        });
+    </script>
+</body>
+</html>
